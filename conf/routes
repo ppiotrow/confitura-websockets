@@ -1,0 +1,13 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /item/:id/:userName  controllers.Application.show(id: String, userName: String)
+
+GET     /ws/:id/:userName    controllers.Application.ws(id: String, userName: String)
+
+POST    /item/               controllers.Application.create
+
+POST    /user/:userName      controllers.Application.register(userName: String)
+
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

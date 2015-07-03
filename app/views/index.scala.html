@@ -1,0 +1,51 @@
+@(id: String, userName: String)(implicit request: RequestHeader)
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Penny auctions</title>
+    <link rel='stylesheet' href='@routes.Assets.at("lib/bootstrap/css/bootstrap.min.css")'>
+    <link rel='stylesheet' href='@routes.Assets.at("lib/FlipClock/compiled/flipclock.css")'>
+    <link rel='stylesheet' href='@routes.Assets.at("lib/toastr/toastr.css")'>
+    <link rel='stylesheet' href='@routes.Assets.at("css/app.css")'>
+</head>
+
+<body data-ws-url="@routes.Application.ws(id, userName).webSocketURL()" data-img-store='@routes.Assets.at("images/")'>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Penny Auctions</a>
+        <p class="navbar-text pull-right wallet">
+            @userName: <span id="balance"></span>BIDs
+        </p>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="container penny-auctions">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 center-block">
+                <h1><span id="title"></span></h1>
+                <img id="itemImage" class="img-responsive center-block"/>
+                <div id="timer" class="penny-timer center-block"></div>
+                <p class="lead">
+                    <span id="price"></span> (<span id="winner"></span>)
+                </p>
+                <button type="button" class="btn btn-success btn-lg" id="bid_button">Bid!</button>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<script type='text/javascript' src='@routes.Assets.at("lib/jquery/jquery.min.js")'></script>
+<script type='text/javascript' src='@routes.Assets.at("lib/FlipClock/compiled/flipclock.min.js")'></script>
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+<script type='text/javascript' src='@routes.Assets.at("lib/toastr/toastr.js")'></script>
+</body>
+</html>
+

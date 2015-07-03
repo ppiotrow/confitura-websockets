@@ -1,0 +1,37 @@
+.flip-clock-label {
+    visibility: hidden;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.penny-auctions {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.penny-timer {
+    display: inline-block;
+    width: auto;
+}
+.center-block {float: none !important}
+
+.navbar-default {
+  background-color: #440363;
+  border-color: #8e44ad;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ecdbff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+  font-weight: bold;
+}
+
+.toast {
+    opacity: 1 !important;
+}
